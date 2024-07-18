@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"] - MobilePhoneWebApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrapPet.css" />
+     <link rel="stylesheet" href="~/css/Styles.css" asp-append-version="true" /> 
+    <link rel="stylesheet" href="~/MobilePhoneWebApp.styles.css" asp-append-version="true" />
+</head>
+<body style="color: white; background-color: #1d2630 ">
+  
+        <header>
+            <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand theme-text col-2" href="#">
+                        &nbsp;Phone Shop
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarColor02">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item  ">
+                                <a class="nav-link text-danger" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-danger" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                            <li class ="nav-item">
+                                <a class="nav-link text-danger" asp-area="" asp-controller="Sale" asp-action="Task">Task</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle  text-danger" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
+                                <div class="dropdown-menu ">
+                                    <a class="dropdown-item text-white" asp-area="" asp-controller="Customer" asp-action="Index">Customers</a>
+                                    <a class="dropdown-item text-white" asp-area="" asp-controller="City" asp-action="Index">Cities</a>
+                                    <a class="dropdown-item text-white" asp-area="" asp-controller="CPU" asp-action="Index">CPUs</a>
+                                    <a class="dropdown-item text-white" asp-area="" asp-controller="Country" asp-action="Index">Countries</a>
+                                    <a class="dropdown-item text-white" asp-area="" asp-controller="Manufacture" asp-action="Index">Manufactures</a>
+                                    <a class="dropdown-item text-white" asp-area="" asp-controller="MobilePhone" asp-action="Index">MobilePhones</a>
+                                    <a class="dropdown-item text-white" asp-area="" asp-controller="OnlineStore" asp-action="Index">OnlineStores</a>
+                                    <a class="dropdown-item text-white" asp-area="" asp-controller="Sale" asp-action="Index">Sales</a>
+                                    <a class="dropdown-item text-white" asp-area="" asp-controller="Store" asp-action="Index">Stores</a>
+                                    <a class="dropdown-item text-white" asp-area="" asp-controller="TypeCPU" asp-action="Index">TypeCPUs</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Separated link</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <form class="d-flex">
+                            <input class="form-control me-sm-2" type="search" placeholder="Search">
+                            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </header>
+       
+    
+        
+    
+    <div>
+            <div >
+                <main>
+                    @RenderBody()
+                </main>
+            </div>
+    </div>
+
+  
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,14 @@
+﻿@model MobilePhoneWebApp.BusinessLogic.Dtos.UserDto;
+@using MobilePhoneWebApp.BusinessLogic.Services.Interfaces;
+@inject IUserService userService;
+
+<h2>Login</h2>
+
+<form asp-action="Login" method="post">
+    <div>
+        <label asp-for="Id">Username</label>
+        <input asp-for="Id" />
+        <span asp-validation-for="Id"></span>
+    </div>
+    <button type="submit">Login</button>
+</form>

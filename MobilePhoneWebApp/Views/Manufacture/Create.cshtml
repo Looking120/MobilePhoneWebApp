@@ -1,0 +1,49 @@
+﻿@model MobilePhoneWebApp.BusinessLogic.Dtos.ManufactureDto;
+@using MobilePhoneWebApp.BusinessLogic.Services.Interfaces;
+@inject ICountryService countryService;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create</title>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="display-5 mb-3">
+                <strong>Create Manufacture</strong>
+            </h1>
+        </div>
+    </div>
+
+    <div class="main row justify-content-center">
+        <form asp-action="Create" method="post" class="row justify-content-center mb-4" autocomplete="off">
+            @* <div class="main row justify-content-center">
+                <form asp-action="Create" method="post" class="row justify-content-center mb-4" autocomplete="off">
+                    <div class="col-7 mb-3"> *@
+                     <div>
+                        <label for="Name">Manufacture</label>
+                        <input class="form-control" type="text" asp-for="Name" placeholder="Enter Manufacture" />
+                     </div>
+            
+
+            <div>
+                
+                <label for="TypeCpu">Type of CPU</label>
+                <select asp-for="CountryId">
+                    Select Country
+                    @foreach(var country in await countryService.GetAllAsync())
+                    {
+                        <option value="@country.Id">@country.Name</option>
+                    }
+                </select>
+            </div>
+
+            <div class="col-7">
+                <button type="submit" class="btn btn-primary">Delete</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

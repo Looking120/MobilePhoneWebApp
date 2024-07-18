@@ -1,0 +1,67 @@
+﻿@model MobilePhoneWebApp.BusinessLogic.Dtos.SaleDto;
+@using MobilePhoneWebApp.BusinessLogic.Services.Interfaces;
+@inject IStoreService storeService;
+
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-5 mb-3">
+            <strong>Balance Sheet</strong>
+        </h1>
+        <h4>Store</h4>
+    </div>
+</div>
+
+<form asp-action="StoreSales" method="post" class="row justify-content-center mb-4" autocomplete="off">
+
+    <table>
+        <thead>
+            <div class="col-7 mb-3">
+                <label for="Website"> Put the start date</label>
+                <input class="form-control" type="date" asp-for="StartDate" placeholder="Select a date">
+            </div>
+            <div class="col-7 mb-3">
+                <label for="Website">Put the end date</label>
+                <input class="form-control" type="date" asp-for="EndDate" placeholder="Select a date">
+            </div>
+          
+            <div class="col-7 mb-3">
+                <label for="Edit" class="form-label mt-4"> Select the Store</label>
+                <select class="form-select"  asp-for="StoreId">
+                        @foreach (var store in await storeService.GetAllAsync())
+                        {
+                            <option value="@store.Id">@store.Name</option>
+                  
+                    }
+                </select>
+            </div>
+
+        </thead>
+    </table>
+    <div class="col-7">
+        <button type="submit" class="btn btn-primary">Delete</button>
+    </div>
+    @if (Model != null)
+    {
+        <table class="col-7 m-3">
+            <thead>
+                <tr>
+                    <th>CustomerName:</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.StoreSales)
+                {
+                    <tr>
+                        <td>
+                            <h1 class="fant">@item</h1>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+
+    }
+</form>

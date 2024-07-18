@@ -1,0 +1,145 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<body>
+
+    <section id="header">
+        <div class="container">
+
+            <!-- navbar code -->
+            <div class="middle">
+                <h1 class="text-white display-3 fw-bold">
+                    We Help you to find <span class="theme-text">
+                        a better
+                        Phone
+                    </span>
+                </h1>
+            </div>
+        </div>
+    </section>
+ 
+</body>
+
+<div class="container px-4 py-5" id="custom-cards">
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        <!-- Première carte -->
+        <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('css/Iphone_15.jpg');background-position: center;
+                         background-size: cover; background-repeat: no-repeat;  border-radius: 10px 0 0 10px; position: relative; ">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-body-tertiary text-shadow-1">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here, Another here</h3>
+                    <ul class="d-flex list-unstyled mt-auto">
+                        <li class="me-auto">
+                            <img src="css/Appel.jpg" alt="Bootstrap" width="32" height="32"
+                                 class="rounded-circle border border-white">
+                        </li>
+                        <li class="d-flex align-items-center me-3">
+                            <svg class="bi me-2" width="1em" height="1em">
+                                <use xlink:href="#geo-fill" />
+                            </svg>
+                            <small style="font-weight: bold; color:black;">Iphone</small>
+                        </li>
+                        <li class="d-flex align-items-center ">
+                            <svg class="bi me-2" width="1em" height="1em">
+                                <use xlink:href="#calendar3" />
+                            </svg>
+                            <small style="font-weight: bold; color:black;">Appel</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deuxième carte -->
+        <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                 style="background-image: url('css/Samsung.jpg');background-position: center;
+                         background-size: cover; background-repeat: no-repeat;  border-radius: 10px 0 0 10px; position: relative; ">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-body-tertiary text-shadow-1">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Woow!!<br /> New!!</h3>
+                    <ul class="d-flex list-unstyled mt-auto">
+                        <li class="me-auto">
+                            <img src="~/css/SamLogo.jpg" alt="Bootstrap" width="32" height="32"
+                                 class="rounded-circle border border-white">
+                        </li>
+                        <li class="d-flex align-items-center me-3">
+                            <svg class="bi me-2" width="1em" height="1em">
+                                <use xlink:href="#geo-fill" />
+                            </svg>
+                            <small style="font-weight: bold; color:black;">Samsung</small>
+                        </li>
+                        <li class="d-flex align-items-center ">
+                            <svg class="bi me-2" width="1em" height="1em">
+                                <use xlink:href="#calendar3" />
+                            </svg>
+                            <small style="font-weight: bold; color:black;">Ultra</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Troisième carte -->
+        <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                 style="background-image: url('css/Google.jpg');background-position: center;
+                         background-size: cover; background-repeat: no-repeat;  border-radius: 10px 0 0 10px; position: relative; ">
+                <div class="d-flex flex-column h-100 p-5 pb-3  text-body-tertiary text-shadow-1">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h3>
+                    <ul class="d-flex list-unstyled mt-auto">
+                        <li class="me-auto">
+                            <img src="~/css/Google-logo.jpg" alt="Bootstrap" width="32" height="32"
+                                 class="rounded-circle border border-white">
+                        </li>
+                        <li class="d-flex align-items-center me-3">
+                            <svg class="bi me-2" width="1em" height="1em">
+                                <use xlink:href="#geo-fill" />
+                            </svg>
+                            <small style="font-weight: bold; color:black;">Google</small>
+                        </li>
+                        <li class="d-flex align-items-center ">
+                            <svg class="bi me-2" width="1em" height="1em">
+                                <use xlink:href="#calendar3" />
+                            </svg>
+                            <small style="font-weight: bold; color:black;">Pixel</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<h1 class="visually-hidden">Nos Services</h1>
+<div class="container px-4 py-5" id="featured-3">
+    <h2 class="pb-2 border-bottom">Nos Services</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="feature col">
+            <h3 class="fs-2 text-body-emphasis">Titre en vedette</h3>
+            <p>Paragraphe de texte sous le titre pour expliquer le titre. Nous allons ajouter une autre phrase et probablement continuer jusqu'à épuisement des mots.</p>
+            <a href="#" class="icon-link">
+                Appel à l'action
+                <svg class="bi"><use xlink:href="#chevron-right" /></svg>
+            </a>
+        </div>
+        <div class="feature col">
+            <h3 class="fs-2 text-body-emphasis">Titre en vedette</h3>
+            <p>Paragraphe de texte sous le titre pour expliquer le titre. Nous allons ajouter une autre phrase et probablement continuer jusqu'à épuisement des mots.</p>
+            <a href="#" class="icon-link">
+                Appel à l'action
+                <svg class="bi"><use xlink:href="#chevron-right" /></svg>
+            </a>
+        </div>
+        <div class="feature col">
+            <h3 class="fs-2 text-body-emphasis">Titre en vedette</h3>
+            <p>Paragraphe de texte sous le titre pour expliquer le titre. Nous allons ajouter une autre phrase et probablement continuer jusqu'à épuisement des mots.</p>
+            <a href="#" class="icon-link">
+                Appel à l'action
+                <svg class="bi"><use xlink:href="#chevron-right" /></svg>
+            </a>
+        </div>
+    </div>
+</div>

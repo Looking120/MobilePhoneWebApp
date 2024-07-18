@@ -1,0 +1,31 @@
+﻿@model MobilePhoneWebApp.BusinessLogic.Dtos.TypeCPUDto;
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete</title>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="display-5 mb-3">
+                <strong>Delete TypeCPU</strong>
+            </h1>
+        </div>
+    </div>
+
+    <div class="main row justify-content-center">
+        <form asp-action="Delete" method="post" class="row justify-content-center mb-4" autocomplete="off">
+            <div class="col-7 mb-3">
+                <label for="Name">TypeCPU</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"> </span>
+            </div>
+            <div class="col-7">
+                <button type="submit" class="btn btn-primary">Delete</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,51 @@
+﻿@model MobilePhoneWebApp.BusinessLogic.Dtos.SaleDto;
+@using MobilePhoneWebApp.BusinessLogic.Services.Interfaces;
+@inject ICityService cityService;
+
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-5 mb-3">
+            <strong>Balance Sheet</strong>
+        </h1>
+        <h4>Popular phone in each city</h4>
+    </div>
+</div>
+<form asp-action="PopularPhone" method="post" class="row justify-content-center mb-4" autocomplete="off">
+    <table>
+        <thead>
+
+            <div class="col-7 mb-3">
+                <label for="Edit" class="form-label mt-4">Select the Citye</label>
+                <select class="form-select" asp-for="Store.CityId">
+                    @foreach (var city in await cityService.GetAllAsync())
+                    {
+                        <option value="@city.Id">@city.Name</option>
+                    }
+                </select>
+            </div>
+        </thead>
+    </table>
+    <div class="col-7">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    @if (Model != null)
+    {
+        <table class="col-7 m-3">
+            <thead>
+                <tr>
+                    <th>PopularPhone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <h3 class="fant">@Model.MostPopularPhoneModel</h3>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    }
+</form>
+
+

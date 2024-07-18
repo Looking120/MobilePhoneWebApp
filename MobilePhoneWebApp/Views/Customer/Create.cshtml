@@ -1,0 +1,53 @@
+﻿@model MobilePhoneWebApp.BusinessLogic.Dtos.CustomerDto;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create</title>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="display-5 mb-3">
+                <strong>Create Customer</strong>
+            </h1>
+        </div>
+    </div>
+ 
+    <div class="main row justify-content-center">
+
+        <form asp-action="Create" method="post" class="row justify-content-center mb-4" autocomplete="off">
+
+            <div class="main row justify-content-center">
+
+                <form asp-action="Create" method="post" class="row justify-content-center mb-4" autocomplete="off">
+
+                    <div class="col-7 mb-3">
+                        <label for="firstName"> First Name</label>
+                        <input class="form-control" type="text" asp-for="FirstName" placeholder="Enter First Name" />
+                    </div>
+                    <div class="col-7 mb-3">
+                        <label for="lastName"> Last Name</label>
+                        <input class="form-control" type="text" asp-for="LastName" placeholder="Enter Last Name" />
+                    </div>
+                    <div class="col-7 mb-3">
+                        <label for="email"> Email</label>
+                        <input class="form-control" type="text" asp-for="Email" placeholder="Enter Email" />
+                    </div>
+                    <div class="col-7 mb-3">
+                        <label for=" PhoneNumber">  PhoneNumber</label>
+                        <input class="form-control" type="text" asp-for=" PhoneNumber" placeholder="Enter the Phone Number" />
+                    </div>
+                    <div class="col-7">
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </form>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿@model MobilePhoneWebApp.BusinessLogic.Dtos.CountryDto;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create</title>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="display-5 mb-3">
+                <strong>Create Countries</strong>
+            </h1>
+        </div>
+    </div>
+
+    <div class="main row justify-content-center">
+
+        <form asp-action="Create" method="post" class="row justify-content-center mb-4" autocomplete="off">
+
+            <div class="main row justify-content-center">
+
+                <form asp-action="Create" method="post" class="row justify-content-center mb-4" autocomplete="off">
+
+                    <div class="col-7 mb-3">
+                        <label for="Name">Countries</label>
+                        <input class="form-control" type="text" asp-for="Name" placeholder="Enter the Country" />
+                    </div>
+                    <div class="col-7">
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </form>
+
+    </div>
+</body>
+</html>

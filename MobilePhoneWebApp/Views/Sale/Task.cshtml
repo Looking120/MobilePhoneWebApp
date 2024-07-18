@@ -1,0 +1,31 @@
+﻿@model MobilePhoneWebApp.BusinessLogic.Dtos.SaleDto;
+
+<div class="container mt-5">
+    <h1>Task Choice</h1>
+    <h4>Sales</h4>
+
+    <ul class="nav nav-pills ">
+        <li class="nav-item">
+            <h1 class="nav-link active">Task Choice</h1>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Task List</a>
+            <div class="dropdown-menu" style="">
+                <h6 class="dropdown-header">choose the question</h6>
+                <a class="dropdown-item" href="@Url.Action("OnlineSales", "Sale")">Show sales for Online Store by time</a>
+                <a class="dropdown-item" href="@Url.Action("StoreSales", "Sale")">Show sales for Store by time</a>
+                <a class="dropdown-item" href="@Url.Action("CitySales", "Sale")">Show sales for each city</a>
+                <a class="dropdown-item" href="@Url.Action("PopularPhone", "Sale")">Show the most popular phone model in each city</a>
+                <a class="dropdown-item" href="@Url.Action("UnPopularPhone", "Sale")">Show the most unpopular phone model in each city</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+    </ul>
+</div>

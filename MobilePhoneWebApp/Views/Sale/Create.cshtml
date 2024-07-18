@@ -1,0 +1,92 @@
+﻿@model MobilePhoneWebApp.BusinessLogic.Dtos.SaleDto;
+@using MobilePhoneWebApp.BusinessLogic.Services.Interfaces;
+@inject ICustomerService custormerService;
+@inject IOnlineStoreService onlineService;
+@inject IStoreService storeService;
+@inject IMobilePhoneService mobilePhoneService;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create</title>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="display-5 mb-3">
+                <strong>Create Sale</strong>
+            </h1>
+        </div>
+    </div>
+
+    <div class="main row justify-content-center">
+        <form asp-action="Create" method="post" class="row justify-content-center mb-4" autocomplete="off">
+            <div class="main row justify-content-center">
+                <form asp-action="Create" method="post" class="row justify-content-center mb-4" autocomplete="off">
+                    <div class="col-7 mb-3">
+                        <label for="Quatity">Quatity</label>
+                        <input class="form-control" type="text" asp-for="Quantity" placeholder="Enter Phone Quantity" />
+                    </div>
+                    <div class="col-7 mb-3">
+                        <label for="Name">Comments</label>
+                        <input class="form-control" type="text" asp-for="Name" placeholder="Enter The comment" />
+                    </div>
+                    <div class="col-7 mb-3">
+                        <label for="DateSale">Date Sale</label>
+                        <input class="form-control" type="datetime" asp-for="DateSale" placeholder="Enter the Date Sale" />
+                    </div>
+                   
+                    <div class="col-7 mb-3">
+                        <label for="" class="form-label mt-4">Select Customer</label>
+                        <select class="form-select" asp-for="CustomerId">
+                            @foreach(var customers in await custormerService.GetAllAsync())
+                            {
+                                <option value="@customers.Id">@customers.LastName</option>
+                            }
+                        </select>
+
+                    </div>
+                   
+                    <div class="col-7 mb-3">
+                        <label for="Create" class="form-label mt-4">Select Oneline Store</label>
+                        <select class="form-select" asp-for="OnlineStoreId">
+                            @foreach (var onlineStores in await onlineService.GetAllAsync())
+                            {
+                                <option value="@onlineStores.Id">@onlineStores.WebSite</option>
+                            }
+                        </select>
+
+                    </div>
+                   
+                    <div class="col-7 mb-3">
+                        <label for="Create" class="form-label mt-4">Select Store</label>
+                        <select class="form-select" asp-for="StoreId">
+                            @foreach (var storeService in await storeService.GetAllAsync())
+                            {
+                                <option value="@storeService.Id">@storeService.Name</option>
+                            }
+                        </select>
+
+                    </div>
+                    
+                    <div class="col-7 mb-3">
+                        <label for="Create" class="form-label mt-4">Select Phone</label>
+                        <select class="form-select" asp-for="MobilePhoneId">
+                            @foreach (var mobilePhoneService in await mobilePhoneService.GetAllAsync())
+                            {
+                                <option value="@mobilePhoneService.Id">@mobilePhoneService.Model</option>
+                            }
+                        </select>
+
+                    </div>
+
+                    <div class="col-7">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+                </form>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

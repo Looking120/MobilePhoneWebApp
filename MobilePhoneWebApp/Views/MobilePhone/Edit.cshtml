@@ -1,0 +1,55 @@
+﻿@model MobilePhoneWebApp.BusinessLogic.Dtos.MobilePhoneDto;
+@using MobilePhoneWebApp.BusinessLogic.Services.Interfaces;
+@inject IMobilePhoneService mobilePhoneService;
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Create</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="display-5 mb-3">
+                <strong>Edit Phone</strong>
+            </h1>
+        </div>
+    </div>
+
+    <div class="main row justify-content-center">
+        <form asp-action="Edit" method="post" class="row justify-content-center mb-4" autocomplete="off">
+            <div class="col-7 mb-3">
+                <label for="Edit" class="form-label mt-4">Select Phone</label>
+                <select class="form-select" asp-for="Id">
+                    <option value="">Select Mobile Phone</option>
+                    @foreach (var mobilePhone in await mobilePhoneService.GetAllAsync())
+                    {
+                        <option value="@mobilePhone.Id">@mobilePhone.Model</option>
+                    }
+                </select>
+            </div>
+            <div class="col-7 mb-3">
+                <label for="Model">Model</label>
+                <input class="form-control" type="text" asp-for="Model" placeholder="Enter Phone Model" />
+            </div>
+            <div class="col-7 mb-3">
+                <label for="DateSale">DateSale</label>
+                <input class="form-control" type="text" asp-for="Cost" placeholder="Enter Phone Cost" />
+            </div>
+            <div class="col-7 mb-3">
+                <label for="YearOfRelease"> Year Of Release</label>
+                <input class="form-control" type="text" asp-for="YearOfRelease" placeholder="Enter Phone Year Of Release" />
+            </div>
+            <div class="col-7 mb-3">
+                <label for="Ram">Ram</label>
+                <input class="form-control" type="text" asp-for="Ram" placeholder="Enter the Phone Ram" />
+            </div>
+
+            <div class="col-7">
+                <button type="submit" class="btn btn-primary">Delete</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

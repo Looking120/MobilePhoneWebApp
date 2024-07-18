@@ -1,0 +1,46 @@
+﻿@model MobilePhoneWebApp.BusinessLogic.Dtos.CityDto;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create</title>
+
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="display-5 mb-3">
+                <strong>Create Customer</strong>
+            </h1>
+        </div>
+    </div>
+
+    <div class="main row justify-content-center">
+
+        <form asp-action="Create" method="post" class="row justify-content-center mb-4" autocomplete="off">
+
+            <div class="main row justify-content-center">
+
+                <form asp-action="Create" method="post" class="row justify-content-center mb-4" autocomplete="off">
+
+                    <div class="col-7 mb-3">
+                        <label for="Name"> Name</label>
+                        <input class="form-control" type="text" asp-for="Name" placeholder="Enter City" />
+                    </div>
+                    <div class="col-7 mb-3">
+                        <label for="PosralCode">Postal Code</label>
+                        <input class="form-control" type="text" asp-for="PostalCode" placeholder="Enter Postal Code" />
+                    </div>
+                    <div class="col-7">
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </form>
+
+    </div>
+</body>
+</html>

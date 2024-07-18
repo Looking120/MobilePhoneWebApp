@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MobilePhoneWebApp.DataAccess.Entity.City">
+    <Position X="12" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="MobilePhoneWebApp.DataAccess.Entity.Country">
+    <Position X="9.75" Y="1" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="MobilePhoneWebApp.DataAccess.Entity.CPU">
+    <Position X="2" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="MobilePhoneWebApp.DataAccess.Entity.Customer">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="MobilePhoneWebApp.DataAccess.Entity.Manufacture">
+    <Position X="10" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="MobilePhoneWebApp.DataAccess.Entity.MobilePhone">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="MobilePhoneWebApp.DataAccess.Entity.OnlineStore">
+    <Position X="5" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="MobilePhoneWebApp.DataAccess.Entity.Sale">
+    <Position X="7.75" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="MobilePhoneWebApp.DataAccess.Entity.Store">
+    <Position X="4.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="MobilePhoneWebApp.DataAccess.Entity.TypeCPU">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name=" Times New Roman 14" Size="10" />
+</ClassDiagram>

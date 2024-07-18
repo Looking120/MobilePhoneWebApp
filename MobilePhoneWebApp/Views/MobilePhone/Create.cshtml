@@ -1,0 +1,76 @@
+﻿@model MobilePhoneWebApp.BusinessLogic.Dtos.MobilePhoneDto;
+@using MobilePhoneWebApp.BusinessLogic.Services.Interfaces;
+@inject IManufactureService manufactureService;
+@inject ICPUService cpuService;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create</title>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="display-5 mb-3">
+                <strong>Create Phone</strong>
+            </h1>
+        </div>
+    </div>
+
+   @*  <div class="main row justify-content-center"> *@
+@* 
+        <form asp-action="Create" method="post" class="row justify-content-center mb-4" autocomplete="off">
+
+            <div class="main row justify-content-center"> *@
+
+                <form asp-action="Create" method="post" class="row justify-content-center mb-4" autocomplete="off">
+
+                    <div class="col-7 mb-3">
+                        <label for="Model">Model Phone</label>
+                        <input class="form-control" type="text" asp-for="Model" placeholder="Enter Model Phone" />
+                    </div>
+                    <div class="col-7 mb-3">
+                        <label for="Cost">Cost Phone</label>
+                        <input class="form-control" type="text" asp-for="Cost" placeholder="Enter Cost Phone" />
+                    </div>
+                    <div>
+                        <label for="YearOfRelease">YearOfRelease</label>
+                        <input type="datetime" asp-for="YearOfRelease" />
+                    </div>
+                    <div class="col-7 mb-3">
+                        <label for="Ram">Ram</label>
+                        <input class="form-control" type="text" asp-for="Ram" placeholder="Enter the Phone Ram" />
+                    </div>
+                    <div class="col-7 mb-3">
+                       <select asp-for="ManufactureId">
+                           Select Manufacture
+                            @foreach (var manufacture in await manufactureService.GetAllAsync())
+                            {
+                                <option value="@manufacture.Id">@manufacture.Name</option>
+                            }
+                       </select>
+                      
+                    </div>
+                    <div class="col-7 mb-3">
+                        <select asp-for="CPUId">
+                           Select CPU
+                            @foreach (var cpu in await cpuService.GetAllAsync())
+                            {
+                                <option value="@cpu.Id">@cpu.Name</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="col-7">
+                           <button type="submit" class="btn btn-primary">Delete</button>
+                    </div>
+                </form>
+
+           @*   </div>
+
+        </form> *@
+
+   @*  </div> *@ 
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿@model MobilePhoneWebApp.BusinessLogic.Dtos.OnlineStoreDto;
+@using MobilePhoneWebApp.BusinessLogic.Services.Interfaces;
+@inject IOnlineStoreService onlineStoreService;
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Create</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="display-5 mb-3">
+                <strong>Edit OnlineStore</strong>
+            </h1>
+        </div>
+    </div>
+
+    <div class="main row justify-content-center">
+        <form asp-action="Edit" method="post" class="row justify-content-center mb-4" autocomplete="off">
+            
+            <div class="col-7 mb-3">
+                <label for="Edit" class="form-label mt-4">Select OnlineStore</label>
+                <select class="form-select" asp-for="Id">
+                    <option class="form-select" value="">Select Online Store</option>
+                    @foreach (var onlineStore in await onlineStoreService.GetAllAsync())
+                    {
+                        <option value="@onlineStore.Id">@onlineStore.Email</option>
+                    }
+                </select>
+            </div>
+            <div class="col-7 mb-3">
+                <label for="Website">Website</label>
+                <input class="form-control" type="text" asp-for="WebSite" placeholder="Enter the Website" />
+            </div>
+            <div class="col-7 mb-3">
+                <label for="Email">Email</label>
+                <input class="form-control" type="text" asp-for="Email" placeholder="Enter the Email" />
+            </div>
+            <div class="col-7 mb-3">
+                <label for="Address">Adress</label>
+                <input class="form-control" type="text" asp-for=" Address" placeholder="Enter the Adress" />
+            </div>
+            <div class="col-7 mb-3">
+                <label for="PhoneNumber">Phone Number</label>
+                <input class="form-control" type="text" asp-for=" PhoneNumber" placeholder="Enter the Phone Number" />
+            </div>
+
+            <div class="col-7">
+                <button type="submit" class="btn btn-primary">Delete</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

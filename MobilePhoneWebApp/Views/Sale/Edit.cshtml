@@ -1,0 +1,85 @@
+﻿@model MobilePhoneWebApp.BusinessLogic.Dtos.SaleDto;
+@using MobilePhoneWebApp.BusinessLogic.Services.Interfaces;
+@inject ISaleService saleService;
+@inject IStoreService storeService;
+@inject IMobilePhoneService mobileService;
+@inject IOnlineStoreService onlineService;
+@inject ICustomerService customerService; 
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Create</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="display-5 mb-5">
+                <strong>Edit Sale</strong>
+            </h1>
+        </div>
+    </div>
+
+    <div class="main row justify-content-center">
+        <form asp-action="Edit" method="post" class="row justify-content-center mb-4" autocomplete="off">
+
+            <div class="col-7 mb-3">
+                <label for="Name">Comments</label>
+                <input class="form-control" type="text" asp-for="Name" placeholder="Enter the comments" />
+            </div>
+            <div class="col-7 mb-3">
+                <label for="Quantity">Quantity</label>
+                <input class="form-control" type="text" asp-for="Quantity" placeholder="Enter Phone Quantity" />
+            </div>
+            <div class="col-7 mb-3">
+                <label for="Date">Date</label>
+                <input class="form-control" type="datetime" asp-for="DateSale" placeholder="Enter Date" />
+            </div>
+           
+            <div class="col-7 mb-3">
+                <label for="Edite" class="form-label mt-4">Select Oneline Store</label>
+                <select class="form-select" asp-for="OnlineStoreId">
+                    @foreach(var onlineStore in await onlineService.GetAllAsync())
+                    {
+                        <option value="@onlineStore.Id">@onlineStore.WebSite</option>
+                    }
+                </select>
+            </div>
+           
+            <div class="col-7 mb-3">
+                <label for="Edite" class="form-label mt-4">Select Store</label>
+                <select class="form-select" asp-for="StoreId">
+                    @foreach (var store in await storeService.GetAllAsync())
+                    {
+                        <option value="@store.Id">@store.Name</option>
+                    }
+                </select>
+            </div>
+            
+            <div class="col-7 mb-3">
+                <label for="Edite" class="form-label mt-4">Select customer</label>
+                <select class="form-select" asp-for="CustomerId">
+                    @foreach (var customer in await customerService.GetAllAsync())
+                    {
+                        <option value="@customer.Id">@customer.FirstName</option>
+                    }
+                </select>
+            </div>
+            
+            <div class="col-7 mb-3">
+                <label for="Edite" class="form-label mt-4">Select Oneline Phone</label>
+                <select class="form-select" asp-for="MobilePhoneId">
+                    @foreach (var mobilePhone in await mobileService.GetAllAsync())
+                    {
+                        <option value="@mobilePhone.Id">@mobilePhone.Id</option>
+                    }
+                </select>
+            </div>
+            <div class="col-7">
+                <button type="submit" class="btn btn-primary">Delete</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
